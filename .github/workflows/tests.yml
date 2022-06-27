@@ -19,7 +19,8 @@ jobs:
     - run: poetry run black .
     - run: poetry run mypy .
     - run: poetry run python3 -m  xdoctest hmp_aviel
-    - run: poetry run pytest --typeguard-packages=hmp_aviel --cov --junit-xml=cov.xml
-    - run: poetry run codecov --file cov.xml
+    - run: poetry run pytest --typeguard-packages=hmp_aviel --cov
+    - run: coverage xml --fail-under=0
+    - run: poetry run codecov
       env:
         CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
