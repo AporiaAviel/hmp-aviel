@@ -15,4 +15,4 @@ jobs:
         architecture: x64
     - run: sudo apt install python3-venv -y; curl https://install.python-poetry.org | python3 - --version 1.2.0b1
     - run: poetry install
-    - run: poetry flake8
+    - run: poetry run flake8
