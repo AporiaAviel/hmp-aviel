@@ -13,6 +13,6 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
         architecture: x64
-    - run: pip install poetry==1.0.5
+    - run: apt install python3-venv -y; curl https://install.python-poetry.org | python3 - --version 1.2.0b1
     - run: poetry install
     - run: poetry flake8
